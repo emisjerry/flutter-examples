@@ -1,3 +1,4 @@
+// https://juejin.im/post/5be5356bf265da61602c6f68
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           title: Text('顶部tab切换'),
           bottom: getTabBar(),
         ),
+        drawer: getDrawer(),
         body: new TabBarView(
           controller: _tabController,
           children: <Widget>[
@@ -57,7 +59,7 @@ class MyApp extends StatelessWidget {
         ),
         bottomNavigationBar: Container(
           color: Colors.orange,
-          child: getTabBar(),
+          child: _drawer,
         ),
       ),
     );
@@ -84,5 +86,9 @@ class MyApp extends StatelessWidget {
       ],
       controller: _tabController,
     );
+  }
+
+  get _drawer {
+    return Drawer(child: Text("Item"),);
   }
 }
