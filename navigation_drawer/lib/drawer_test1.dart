@@ -6,7 +6,9 @@ void main() {
       home: MyApp(),
       routes: <String, WidgetBuilder>{
         // define the routes
-        "/settings": (BuildContext context) => SettingsScreen(),
+        "/settings": (BuildContext context) {
+          return SettingsScreen();
+        },
         "/account": (BuildContext context) => AccountScreen(),
       },
     ),
